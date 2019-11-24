@@ -86,6 +86,30 @@ public class DnaRatioResponse {
 	public void setRatio(BigDecimal ratio) {
 		this.ratio = ratio;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (countHumanDNA ^ (countHumanDNA >>> 32));
+		result = prime * result + (int) (countSimianDNA ^ (countSimianDNA >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DnaRatioResponse other = (DnaRatioResponse) obj;
+		if (countHumanDNA != other.countHumanDNA)
+			return false;
+		if (countSimianDNA != other.countSimianDNA)
+			return false;
+		return true;
+	}
 	
 }

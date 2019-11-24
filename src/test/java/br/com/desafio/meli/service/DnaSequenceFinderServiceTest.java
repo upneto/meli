@@ -1,4 +1,4 @@
-package br.com.desafio.meli.business;
+package br.com.desafio.meli.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,7 +14,7 @@ import br.com.desafio.meli.resource.exception.BusinessException;
 import br.com.desafio.meli.service.DnaSequenceFinderService;
 
 @SpringBootTest
-class DnaSequenceFinderTest {
+class DnaSequenceFinderServiceTest {
 
 	private MockMatrix mockMatrix;
 	private DnaSequenceFinderService dnaSequenceFinder;

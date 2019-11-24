@@ -61,6 +61,29 @@ public class DnaResult implements Serializable {
 		this.dataTime = new Date();
 	}
 	
+	/**
+	 * CONSTRUTOR
+	 * @param hashMatrix
+	 */
+	public DnaResult(int hashMatrix) {
+		super();
+		this.hashMatrix = hashMatrix;
+		this.dataTime = new Date();
+	}
+	
+	
+	/**
+	 * CONSTRUTOR
+	 * @param dnaType
+	 * @param hashMatrix
+	 */
+	public DnaResult(DnaType dnaType, int hashMatrix) {
+		super();
+		this.dnaType = dnaType;
+		this.hashMatrix = hashMatrix;
+		this.dataTime = new Date();
+	}
+	
 	// ------------- Getters and Setters -----------
 
 	/**
@@ -119,4 +142,27 @@ public class DnaResult implements Serializable {
 		this.dnaType = dnaType;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + hashMatrix;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DnaResult other = (DnaResult) obj;
+		if (hashMatrix != other.hashMatrix)
+			return false;
+		return true;
+	}
+
+	
 }
