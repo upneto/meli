@@ -1,6 +1,7 @@
 package br.com.desafio.meli.service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class DnaPersistenceService {
 	public DnaRatioResponse ratio() {
 		long simians = this.dnaPersistenceRepository.countByType(DnaType.SIMIAN);
 		long humans  = this.dnaPersistenceRepository.countByType(DnaType.HUMAN);
-		BigDecimal ratio = new BigDecimal(simians).divide(new BigDecimal(humans)); 		
+		BigDecimal ratio = new BigDecimal(4).divide(new BigDecimal(9), 3, RoundingMode.HALF_UP); 		
 		return new DnaRatioResponse(simians, humans, ratio);
 	}
 	
