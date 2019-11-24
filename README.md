@@ -21,10 +21,28 @@ Obs.: O Maven não possui instalador e deverá ser configurado nas [variáveis d
 
 A conexão com o banco de dados também deverá ser feita configurando o arquivo <b>"/meli/src/main/resources/application.properties"</b>
 
-Após os pré requisitos instalados, navegar até o diretório do projeto e executar o comando abaixo:
+Após os pré-requisitos instalados, navegar até o diretório do projeto e executar o comando abaixo:
 
 	mvn clean install
 	
 
 
-	
+### End Points da API
+
+
+[http://ec2-18-218-104-200.us-east-2.compute.amazonaws.com/simian](http://ec2-18-218-104-200.us-east-2.compute.amazonaws.com/simian) 
+
+Faz a pesquisa da sequencia de DNA em uma matriz quadrada (NxN). Este end point deve ser acessado através do verbo <b>POST</b> e a matriz deverá ser enviada no corpo da requisição como no exemplo abaixo:
+
+	{ "dna": [	"CTGAGA", "CTATGC", "TATTGT", "AGAGGG", "CCCCTA", "TCACTG" ] }
+
+ 
+
+[http://ec2-18-218-104-200.us-east-2.compute.amazonaws.com/stats](http://ec2-18-218-104-200.us-east-2.compute.amazonaws.com/stats)
+
+Retorna a quantidade de símios, de humanos e a proporção entre os dois de acordo com o histórico de pesquisas. O acesso a este End point deve ser feito através do verbo <b>GET</b>
+
+
+
+
+
